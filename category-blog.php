@@ -2,10 +2,10 @@
 
 <section class="page-wrap">
 <div class="container">
-    
+    Category Blog
     <?php get_template_part( 'includes/section', 'archive' );?>
 
-    <?php
+<?php
     global $wp_query;
         
     $big = 999999999; // need an unlikely integer
@@ -19,6 +19,7 @@
                 'before_page_number' => '<span class="screen-reader-text">'.$translated.' </span>'
     ) );
     ?>
+
 </div>
 
 

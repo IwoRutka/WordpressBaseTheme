@@ -9,7 +9,7 @@
             );
         ?>
 </div>
-<h6>© Iwo Rutka</h6>
+<h6>2022 © Iwo Rutka</h6>
 </footer>
 <?php wp_footer(  );?>
 </body>
