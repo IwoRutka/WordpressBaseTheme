@@ -2,7 +2,7 @@
 
 <section class="page-wrap">
 <div class="container">
-    Category Blog
+    <b>Category Blog</b>
     <?php get_template_part( 'includes/section', 'archive' );?>
 
 <?php

@@ -26,6 +26,8 @@ add_action( 'wp_enqueue_scripts', 'load_js');
 //Team options
 
 add_theme_support( 'menus');
+add_theme_support( 'post-thumbnailsa');
+
 
 //Menus
 
