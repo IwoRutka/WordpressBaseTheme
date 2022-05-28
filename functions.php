@@ -26,7 +26,8 @@ add_action( 'wp_enqueue_scripts', 'load_js');
 //Team options
 
 add_theme_support( 'menus');
-add_theme_support( 'post-thumbnailsa');
+add_theme_support( 'post-thumbnails');
+add_theme_support( 'widgets');
 
 
 //Menus
@@ -38,3 +39,7 @@ register_nav_menus(
         'mobile-menu' => 'Mobile Menu Location'
     )
     );
+
+// Custom Images Sizes
+add_image_size('blog-large', 800, 400, false);
+add_image_size('blog-small', 300, 200, false); 
