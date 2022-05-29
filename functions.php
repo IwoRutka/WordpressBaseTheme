@@ -42,3 +42,24 @@ register_nav_menus(
 // Add Custom Image Sizes
 add_image_size('blog-large', 800, 400, false);
 add_image_size('blog-small', 400, 200, false);
+
+//Register Sidebar
+function my_sidebars(){
+        register_sidebar(
+            array(
+                'name' => 'Page Sidebar',
+                'id' => 'page-sidebar',
+                'before_title' => '<h4 class="widget-title">',
+                'after_title' => '</h4>'
+            )
+            );
+            register_sidebar(
+                array(
+                    'name' => 'Blog Sidebar',
+                    'id' => 'blog-sidebar',
+                    'before_title' => '<h4 class="widget-title">',
+                    'after_title' => '</h4>'
+                )
+                );
+}
+add_action('widgets_init', 'my_sidebars');
