@@ -63,3 +63,39 @@ function my_sidebars(){
                 );
 }
 add_action('widgets_init', 'my_sidebars');
+
+function custom_post_type(){
+    $args = array(
+        'labels' => array(
+            'name' => 'Kontakty',
+            'singular_name' => 'Formularz kontaktowy'
+        ),
+        'hierarchical' => true,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-email-alt',
+        'supports' => array('title', 'editor', 'thumbnail'),
+        //'rewrite' => array('slug' => 'my-cars'),
+    );
+    register_post_type('kontakty', $args);
+}
+add_action('init', 'custom_post_type');
+
+function custom_post_taxonomy(){
+    $args = array(
+        'labels' => array(
+            'name' => 'Formularze kontaktowe',
+            'singular_name' => 'Formularze kontaktowe'
+        ),
+        'hierarchical' => true,
+        'public' => true,
+       // 'has_archive' => true,
+       // 'menu_icon' => 'dashicons-email-alt',
+       'supports' => array('title', 'editor', 'thumbnail'),
+        //'rewrite' => array('slug' => 'my-cars'),
+    );
+    register_taxonomy('formularze_kontaktowe', array('kontakty'), $args);
+
+};
+
+add_action('init', 'custom_post_taxonomy');
