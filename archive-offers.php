@@ -5,14 +5,13 @@
 
 <section class="row">
     <div class="col-lg-3">
-
-        <?php if(is_active_sidebar('blog-sidebar')):?>
-            <?php dynamic_sidebar('blog-sidebar');?>
+        <?php if(is_active_sidebar('offers-sidebar')):?>
+            <?php dynamic_sidebar('offers-sidebar');?>
         <?php endif;?>
     </div>
     <div class="col-lg-9">
 
-    <?php get_template_part( 'includes/section', 'archive' );?>
+    <?php get_template_part( 'includes/section', 'offer' );?>
 
     <?php
     global $wp_query;
