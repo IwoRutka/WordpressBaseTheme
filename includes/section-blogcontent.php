@@ -1,5 +1,5 @@
 <?php if (have_posts(  )): while( have_posts(  )): the_post(  );?>
-    <b>Single Blog Content</b><br>
+    <b>New</b><br>
     <p><?php echo get_the_date('l d-F-Y h:i');?></p>
     <p><?php the_content( );?></p>
     <?php 
