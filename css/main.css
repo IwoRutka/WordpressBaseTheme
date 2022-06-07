@@ -1,7 +1,7 @@
 header{
-    background-color: #111;
+    /* background-color: #111;
     width: 100%;
-    height: 100px;
+    height: 100px; */
 }
 
 .widget{
@@ -14,10 +14,10 @@ header{
 }
 
 header .container{
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100%; */
 }
 
 header .header-menu{
