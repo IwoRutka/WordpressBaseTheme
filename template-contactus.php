@@ -41,7 +41,8 @@ Template Name: Contect Us
             <?php endif;?>
             <br>
             <br>
-            <?php echo apply_shortcodes( '[contact-form-7 id="78" title="Contact form 1"]' ); ?>
+            <?php get_template_part('includes/form', 'enquiry');?>
+            <?php //echo apply_shortcodes( '[contact-form-7 id="78" title="Contact form 1"]' ); ?>
         </div>
     </div>
 </div>

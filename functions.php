@@ -113,3 +113,49 @@ function custom_post_taxonomy(){
 
 add_action('init', 'custom_post_taxonomy');
 
+// Ajax enquiry function
+add_action('wp_ajax_enquiry', 'enquiry_form');
+add_action('wp_ajax_nopriv_enquiry', 'enquiry_form');
+function enquiry_form()
+{
+    if( !wp_verify_nonce( $_POST['nonce'], 'ajax-nonce')){
+        wp_send_json_error('Nonce is incorrect', 401);
+        die();
+    }
+
+
+    $formdata = [];
+    wp_parse_str($_POST['enquiry'], $formdata);
+    $admin_email = get_option('admin_email');
+    
+    $headers[] = 'Content-Type: text/html; charset=UTF-8';
+    $headers[] = 'From:' . $admin_email;
+    $headers[] = 'Replay-to:' . $formdata['email'];
+
+    $send_to = $admin_email;
+
+    $subject = "Enquiry from" . get_option('blogname');
+
+    $message = '';
+
+    foreach($formdata as $index => $field)
+    {
+        $message .= '<strong>' . $index . '</strong>: ' . $field . '<br>';
+    }
+
+    try {
+        if(wp_mail($send_to, $subject, $message, $headers))
+        {
+            wp_send_json_success('Email sent');
+        }
+        else{
+            wp_send_json_success('Email error');
+        }
+    } catch (Exception $e)
+    {
+        wp_send_json_success($e->getMessage());
+    }
+
+    // wp_send_json_success($formdata['fname']);
+}
+
