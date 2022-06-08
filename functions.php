@@ -1,6 +1,9 @@
 <?php
 
 // Load Style
+
+use PHPMailer\PHPMailer\PHPMailer;
+
 function load_css()
 {
     wp_register_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', array(), false, 'all' );
@@ -241,3 +244,16 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 
 // register a new menu
 register_nav_menu('main-menu', 'Main menu');
+
+add_action('phpmailer_init', 'custom_mailer');
+function custom_mailer(PHPMailer $phpmailer)
+{
+    $phpmailer->setFrom('admin@iworutka.com', 'Administrator www');
+    $phpmailer->Host = 'smtp.cyberfolks.pl';
+    $phpmailer->Port = 587;
+    $phpmailer->SMTPAuth = true;
+    $phpmailer->SMTPSecure = 'tsl';
+    $phpmailer->Username = SMTP_LOGIN;
+    $phpmailer->Password = SMTP_PASSWORD;
+    $phpmailer->IsSMTP();
+}
