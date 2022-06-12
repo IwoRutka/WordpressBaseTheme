@@ -1,0 +1,32 @@
+{
+  "name": "wordpressbasetheme",
+  "version": "1.0.0",
+  "description": "Version: 1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IwoRutka/WordpressBaseTheme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IwoRutka/WordpressBaseTheme/issues"
+  },
+  "homepage": "https://github.com/IwoRutka/WordpressBaseTheme#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.52.3",
+    "sass-loader": "^12.6.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.5",
+    "bootstrap": "^5.1.3"
+  }
+}
