@@ -257,3 +257,17 @@ function custom_mailer(PHPMailer $phpmailer)
     $phpmailer->Password = SMTP_PASSWORD;
     $phpmailer->IsSMTP();
 }
+
+function latest_offers(){
+    ob_start();
+    get_template_part('includes/latest', 'offers');
+    return ob_get_clean();
+}
+
+add_shortcode('latest_offers', 'latest_offers');
+
+function phone_number(){
+    return '81 666 66 66';
+}
+
+add_shortcode('phone_number', 'phone_number');
